@@ -10,15 +10,17 @@ sidebar_position: 1
 const form = useForm<T>({
   defaultValues: T | () => Promise<T>,
   resolver: Resolver,
-  shouldFocusError: boolean
+  shouldFocusError: boolean,
+  mode: "all" | "onBlur" | "onChange" | "onTouched" | "onSubmit",
 })
 ```
 
-| Props              | Description                                                                                                                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `defaultValues`    | Thiết lập giá trị ban đầu cho form, nó có thể là một object, hoặc một async function (gọi giá trị từ API)                                                                                  |
-| `resolver`         | Cho phép tùy chỉnh quy trình validate form bằng cách cung cấp một hàm validate riêng. Điều này hữu ích khi muốn validate form bằng cách sử dụng các thư viện xác thực bên ngoài như `zod`. |
-| `shouldFocusError` | - Khi đặt giá trị là `true`, tự động focus đến trường đầu tiên khi có lỗi xảy ra trong biểu mẫu.<br />- Giá trị mặc định là `true`                                                         |
+| Props              | Description                                                                                                                                                                                                                                                                   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `defaultValues`    | Thiết lập giá trị ban đầu cho form, nó có thể là một object, hoặc một async function (gọi giá trị từ API)                                                                                                                                                                     |
+| `resolver`         | Cho phép tùy chỉnh quy trình validate form bằng cách cung cấp một hàm validate riêng. Điều này hữu ích khi muốn validate form bằng cách sử dụng các thư viện xác thực bên ngoài như `zod`.                                                                                    |
+| `shouldFocusError` | - Khi đặt giá trị là `true`, tự động focus đến trường đầu tiên khi có lỗi xảy ra trong biểu mẫu.<br />- Giá trị mặc định là `true`                                                                                                                                            |
+| `mode`             | Thiết lập để chế độ validate<br />- `all`: validate khi submit và onChange<br />- `onBlur`: validate khi blur field<br />- `onChage`: validate mỗi khi có sự thay đổi của field<br />- `onSubmit`: validate khi submit form (đây là giá trị mặc định và nên dùng giá trị này) |
 
 ## Returns
 
