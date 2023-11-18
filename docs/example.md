@@ -323,3 +323,7 @@ const Home = () => {
 
 export default Home;
 ```
+
+## Kết quả
+
+- Link demo: https://stackblitz.com/edit/react-hook-form-example-7kjwps
