@@ -48,7 +48,7 @@ const config = {
         },
         items: [
           {
-            href: "https://github.com/minhchi1509",
+            href: "https://github.com/nmc-docs/react-hook-form",
             label: "GitHub",
             position: "right",
           },
